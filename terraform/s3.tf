@@ -15,6 +15,21 @@ resource "aws_s3_bucket_public_access_block" "domain" {
   restrict_public_buckets = false
 }
 
+resource "aws_s3_bucket_policy" "public_read_get_object" {
+  bucket = aws_s3_bucket.domain.id
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect   = "Allow"
+        Action   = "*"
+        Resource = "*"
+      }
+    ]
+  })
+}
+
 resource "aws_s3_bucket_logging" "domain" {
   bucket = aws_s3_bucket.domain.id
 
