@@ -1,5 +1,16 @@
+resource "aws_s3_bucket" "logs" {
+  bucket = "logs.${var.local.domain}"
+}
+
 resource "aws_s3_bucket" "domain" {
   bucket = var.local.domain
+}
+
+resource "aws_s3_bucket_logging" "example" {
+  bucket = aws_s3_bucket.domain.id
+
+  target_bucket = aws_s3_bucket.logs.id
+  target_prefix = "logs/"
 }
 
 resource "aws_s3_bucket_website_configuration" "domain" {
