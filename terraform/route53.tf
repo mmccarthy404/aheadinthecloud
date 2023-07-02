@@ -19,7 +19,7 @@ resource "aws_route53_record" "subdomain" {
   type    = "A"
 
   alias = {
-    name    = aws_s3_bucket.domain.bucket_domain_name
-    zone_id = aws_s3_bucket.domain.hosted_zone_id
+    name    = aws_s3_bucket.subdomain.bucket_domain_name
+    zone_id = aws_s3_bucket.subdomain.hosted_zone_id
   }
 }
