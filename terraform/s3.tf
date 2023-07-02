@@ -6,7 +6,31 @@ resource "aws_s3_bucket" "domain" {
   bucket = var.local.domain
 }
 
-resource "aws_s3_bucket_logging" "example" {
+resource "aws_s3_bucket_public_access_block" "domain" {
+  bucket = aws_s3_bucket.domain.id
+
+  block_public_acls       = false
+  block_public_policy     = false
+  ignore_public_acls      = false
+  restrict_public_buckets = false
+}
+
+resource "aws_s3_bucket_policy" "public_read_get_object" {
+  bucket = aws_s3_bucket.domain.id
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect   = "Allow"
+        Action   = "*"
+        Resource = "*"
+      }
+    ]
+  })
+}
+
+resource "aws_s3_bucket_logging" "domain" {
   bucket = aws_s3_bucket.domain.id
 
   target_bucket = aws_s3_bucket.logs.id
