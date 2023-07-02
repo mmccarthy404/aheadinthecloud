@@ -8,7 +8,7 @@ resource "aws_route53_record" "domain" {
   type    = "A"
 
   alias {
-    name                   = aws_s3_bucket.domain.bucket_domain_name
+    name                   = aws_s3_bucket_website_configuration.domain.website_domain
     zone_id                = aws_s3_bucket.domain.hosted_zone_id
     evaluate_target_health = false
   }
@@ -20,7 +20,7 @@ resource "aws_route53_record" "subdomain" {
   type    = "A"
 
   alias {
-    name                   = aws_s3_bucket.subdomain.bucket_domain_name
+    name                   = aws_s3_bucket_website_configuration.subdomain.website_domain
     zone_id                = aws_s3_bucket.subdomain.hosted_zone_id
     evaluate_target_health = false
   }
