@@ -1,0 +1,46 @@
+name: nextjs-cd
+
+on:
+  push:
+    branches: [main]
+    paths: [blog/**]
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  nextjs-ci:
+    name: nextjs-ci
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./blog
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Setup Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+
+    - name: Install dependencies
+      run: npm install
+    
+    - name: Build
+      run: npm run-script build
+
+    - name: Export
+      run: npm run-script export
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v2
+      with:
+        role-to-assume: arn:aws:iam::004351562122:role/github-oidc-ahead-in-the-cloud
+        aws-region: us-east-1
+
+    - name: Deploy
+      run: aws s3 sync ./out/* s3://ahead-in-the-cloud
