@@ -46,7 +46,7 @@ resource "aws_s3_bucket_website_configuration" "domain" {
   }
 
   error_document {
-    key = "404.html"
+    key = "404/index.html"
   }
 }
 
