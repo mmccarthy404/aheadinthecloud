@@ -43,4 +43,4 @@ jobs:
         aws-region: us-east-1
 
     - name: Deploy
-      run: aws s3 sync ./out/ s3://aheadinthecloud.com
+      run: aws s3 sync ./out/ s3://aheadinthecloud.com --delete
