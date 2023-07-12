@@ -32,3 +32,26 @@ resource "aws_s3_bucket_logging" "domain" {
   target_bucket = aws_s3_bucket.logs.id
   target_prefix = var.local.s3_logging_prefix
 }
+
+data "aws_iam_policy_document" "oac_policy" {
+  statement {
+    actions   = ["s3:GetObject"]
+    resources = ["${aws_s3_bucket.domain.arn}/*"]
+
+    principals {
+      type        = "Service"
+      identifiers = ["cloudfront.amazonaws.com"]
+    }
+
+    condition {
+      test     = "StringEquals"
+      variable = "aws:SourceArn"
+      values   = [module.cloudfront.cloudfront_distribution_arn]
+    }
+  }
+}
+
+resource "aws_s3_bucket_policy" "domain" {
+  bucket = aws_s3_bucket.domain.id
+  policy = data.aws_iam_policy_document.oac_policy.json
+}
