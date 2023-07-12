@@ -1,7 +1,10 @@
 module "cloudfront" {
   source = "terraform-aws-modules/cloudfront/aws"
 
-  aliases = ["${var.local.subdomain}.${var.local.domain}"]
+  aliases = [
+    var.local.domain,
+    "${var.local.subdomain}.${var.local.domain}"
+  ]
 
   comment             = "aheadinthecloud.com distribution"
   enabled             = true
@@ -65,4 +68,10 @@ module "cloudfront" {
     minimum_protocol_version = "TLSv1.2_2021"
     ssl_support_method       = "sni-only"
   }
+
+  custom_error_response = [{
+    error_code         = 404
+    response_code      = 404
+    response_page_path = "/404/index.html"
+  }]
 }
