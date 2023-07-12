@@ -16,7 +16,7 @@ resource "aws_route53_record" "acm" {
   records         = [each.value.record]
   ttl             = 60
   type            = each.value.type
-  zone_id         = data.aws_route53_zone.example.zone_id
+  zone_id         = data.aws_route53_zone.selected.zone_id
 }
 
 resource "aws_route53_record" "domain" {
