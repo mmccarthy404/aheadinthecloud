@@ -1,5 +1,5 @@
 resource "aws_acm_certificate" "this" {
-  domain_name       = var.local.domain
+  domain_name       = "*.${var.local.domain}"
   validation_method = "DNS"
 
   lifecycle {
