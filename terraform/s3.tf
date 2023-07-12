@@ -25,15 +25,3 @@ resource "aws_s3_bucket_logging" "domain" {
   target_bucket = aws_s3_bucket.logs.id
   target_prefix = var.local.s3_logging_prefix
 }
-
-resource "aws_s3_bucket_website_configuration" "domain" {
-  bucket = aws_s3_bucket.domain.id
-
-  index_document {
-    suffix = var.local.index_doc
-  }
-
-  error_document {
-    key = var.local.error_doc
-  }
-}
