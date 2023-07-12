@@ -1,3 +1,12 @@
+
+resource "aws_cloudfront_function" "append_index" {
+  name    = "append-index"
+  comment = "append index.html to requests"
+  code    = file("${path.module}/cloudfront_function.js")
+  runtime = "cloudfront-js-1.0"
+  publish = true
+}
+
 module "cloudfront" {
   source = "terraform-aws-modules/cloudfront/aws"
 
@@ -42,26 +51,20 @@ module "cloudfront" {
 
   default_cache_behavior = {
     target_origin_id       = "s3"
-    viewer_protocol_policy = "allow-all"
+    viewer_protocol_policy = "redirect-to-https"
 
     allowed_methods = ["GET", "HEAD", "OPTIONS"]
     cached_methods  = ["GET", "HEAD"]
     compress        = true
     query_string    = true
-  }
 
-  ordered_cache_behavior = [
-    {
-      path_pattern           = "*"
-      target_origin_id       = "s3"
-      viewer_protocol_policy = "redirect-to-https"
-
-      allowed_methods = ["GET", "HEAD", "OPTIONS"]
-      cached_methods  = ["GET", "HEAD"]
-      compress        = true
-      query_string    = true
+    function_association = {
+      # Valid keys: viewer-request, viewer-response
+      viewer-request = {
+        function_arn = aws_cloudfront_function.append_index.arn
+      }
     }
-  ]
+  }
 
   viewer_certificate = {
     acm_certificate_arn      = aws_acm_certificate_validation.this.certificate_arn
