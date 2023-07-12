@@ -1,7 +1,6 @@
 resource "aws_s3_bucket" "logs" {
   bucket = join("-", [
     var.local.logs_bucket_prefix,
-    "logs",
     var.local.region,
     data.aws_caller_identity.current.account_id,
     var.local.env
@@ -10,9 +9,12 @@ resource "aws_s3_bucket" "logs" {
   force_destroy = !var.local.keep_log_bucket_on_destroy
 }
 
-resource "aws_s3_bucket_acl" "logs" {
+resource "aws_s3_bucket_ownership_controls" "logs" {
   bucket = aws_s3_bucket.logs.id
-  acl    = "null"
+
+  rule {
+    object_ownership = "BucketOwnerPreferred"
+  }
 }
 
 resource "aws_s3_bucket" "domain" {
