@@ -1,4 +1,4 @@
-Check out the documentation below to get started!
+Check out the documentation below to get started
 
 Facing issues? Check the [FAQ page](https://github.com/timlrx/tailwind-nextjs-starter-blog/wiki) and do a search on past issues. Feel free to open a new issue if none has been posted previously.
 
