@@ -10,6 +10,11 @@ resource "aws_s3_bucket" "logs" {
   force_destroy = !var.local.keep_log_bucket_on_destroy
 }
 
+resource "aws_s3_bucket_acl" "logs" {
+  bucket = aws_s3_bucket.logs.id
+  acl    = "null"
+}
+
 resource "aws_s3_bucket" "domain" {
   bucket = join("-", [
     var.local.domain_bucket_prefix,
