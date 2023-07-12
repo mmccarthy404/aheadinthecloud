@@ -32,7 +32,7 @@ module "cloudfront" {
 
   origin = {
     s3 = {
-      domain_name           = aws_s3_bucket_website_configuration.subdomain.website_domain
+      domain_name           = aws_s3_bucket_website_configuration.domain.website_domain
       origin_access_control = "s3_oac" # key in `origin_access_control`
     }
   }

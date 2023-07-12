@@ -1,11 +1,22 @@
 resource "aws_s3_bucket" "logs" {
-  bucket = var.local.log_bucket
+  bucket = join("-", [
+    var.local.logs_bucket_prefix,
+    "logs",
+    var.local.region,
+    data.aws_caller_identity.current.account_id,
+    var.local.env
+  ])
 
   force_destroy = !var.local.keep_log_bucket_on_destroy
 }
 
 resource "aws_s3_bucket" "domain" {
-  bucket = var.local.domain
+  bucket = join("-", [
+    var.local.domain_bucket_prefix,
+    var.local.region,
+    data.aws_caller_identity.current.account_id,
+    var.local.env
+  ])
 }
 
 resource "aws_s3_bucket_public_access_block" "domain" {
