@@ -73,5 +73,9 @@ module "cloudfront" {
     error_code         = 404
     response_code      = 404
     response_page_path = "/404/index.html"
+    }, {
+    error_code         = 403
+    response_code      = 403
+    response_page_path = "/404/index.html"
   }]
 }
