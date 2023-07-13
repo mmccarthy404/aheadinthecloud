@@ -1,4 +1,3 @@
-
 resource "aws_cloudfront_function" "append_index" {
   name    = "append-index"
   comment = "append index.html to requests"
