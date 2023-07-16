@@ -1,3 +1,3 @@
-# ahead-in-the-cloud
+# serverless-bio
 
-Infrastructure and application code for [aheadinthecloud.com](http://aheadinthecloud.com)!
+Infrastructure and application code for [serverlessbio.com](https://serverlessbio.com)!
