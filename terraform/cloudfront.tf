@@ -14,7 +14,7 @@ module "cloudfront" {
     "${var.local.subdomain}.${var.local.domain}"
   ]
 
-  comment             = "aheadinthecloud.com distribution"
+  comment             = var.local.cloudfront_description
   enabled             = true
   http_version        = "http2and3"
   is_ipv6_enabled     = true
