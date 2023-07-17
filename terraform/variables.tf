@@ -11,5 +11,6 @@ variable "local" {
     s3_logging_prefix          = string
     cloudfront_logging_prefix  = string
     keep_log_bucket_on_destroy = bool
+    cloudfront_description     = string
   })
 }

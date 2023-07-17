@@ -10,4 +10,5 @@ local = {
   s3_logging_prefix          = "s3/"
   cloudfront_logging_prefix  = "cloudfront/"
   keep_log_bucket_on_destroy = false
+  cloudfront_description     = "serverlessbio.com distribution"
 }

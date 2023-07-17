@@ -53,6 +53,8 @@ resource "aws_s3_bucket" "domain" {
     data.aws_caller_identity.current.account_id,
     var.local.env
   ])
+
+  force_destroy = true
 }
 
 resource "aws_s3_bucket_logging" "domain" {
