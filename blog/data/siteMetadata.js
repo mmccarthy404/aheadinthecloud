@@ -2,7 +2,7 @@ const siteMetadata = {
   title: 'Serverless for Life Sciences',
   author: 'Michael McCarthy',
   headerTitle: 'ServerlessBio',
-  description: 'A technical blog focused on serverless solutions for life science\'s challenges',
+  description: 'A technical blog focused on serverless solutions to life science\'s challenges',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://serverlessbio.com',
