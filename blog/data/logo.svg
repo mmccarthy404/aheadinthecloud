@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="89.460915mm"
-   height="74.697365mm"
-   viewBox="0 0 89.460915 74.697365"
+   width="89.460922mm"
+   height="74.697357mm"
+   viewBox="0 0 89.460922 74.697357"
    version="1.1"
    id="svg5"
    xmlns="http://www.w3.org/2000/svg"
@@ -13,10 +13,10 @@
      id="defs2" />
   <g
      id="layer1"
-     transform="translate(-0.56192995,-10.4531)">
+     transform="translate(-0.56192602,-10.453104)">
     <g
        id="g39983"
-       transform="matrix(0,-1,-1,0,126.50279,194.54568)">
+       transform="rotate(-90,79.313834,115.23185)">
       <path
          style="color:#000000;fill:#bcbaf8;fill-opacity:1;stroke-linecap:round;-inkscape-stroke:none"
          d="m 144.78776,43.589312 -0.002,-7.10937 c -3.4679,1.1223 -6.73824,2.63027 -9.81836,4.47851 z"
