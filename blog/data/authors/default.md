@@ -1,6 +1,6 @@
 ---
 name: Michael McCarthy
-avatar: /static/images/headshot.png
+avatar: /static/images/avatar.jpg
 occupation: Solutions Architect
 company: BioNTech
 email: michael.jos.mccarthy@gmail.com
