@@ -41,6 +41,19 @@ module.exports = {
           '900': '#7c310b',
           '950': '#481700',
         },
+        secondary: {
+          '50': '#eff1fe',
+          '100': '#e1e6fe',
+          '200': '#c9cffc',
+          '300': '#a8b0f9',
+          '400': '#8587f4',
+          '500': '#736ced',
+          '600': '#5f4be0',
+          '700': '#513dc5',
+          '800': '#42349f',
+          '900': '#39317e',
+          '950': '#221d49',
+        },
         gray: colors.neutral,
       },
       typography: (theme) => ({
@@ -75,7 +88,7 @@ module.exports = {
               backgroundColor: theme('colors.gray.800'),
             },
             code: {
-              color: theme('colors.pink.500'),
+              color: theme('colors.secondary.500'),
               backgroundColor: theme('colors.gray.100'),
               paddingLeft: '4px',
               paddingRight: '4px',
