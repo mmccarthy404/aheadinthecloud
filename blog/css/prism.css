@@ -50,12 +50,11 @@
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: #bb4d02;
-	font-style: italic;
+	color: #ffd246;
 }
 
 .token.punctuation {
-	color: #bb4d02;
+	color: #ffd246;
 }
 
 .token.namespace {
@@ -65,7 +64,7 @@
 .token.tag,
 .token.operator,
 .token.number {
-	color: #513dc5;
+	color: #a8b0f9;
 }
 
 .token.property,
@@ -76,12 +75,12 @@
 .token.tag-id,
 .token.selector,
 .token.atrule-id {
-	color: #e1e6fe;
+	color: #fff2c5;
 }
 
 code.language-javascript,
 .token.attr-name {
-	color: #ffd246;
+	color: #e1e6fe;
 }
 
 code.language-css,
@@ -101,7 +100,7 @@ code.language-scss,
 .token.statement,
 .token.regex,
 .token.atrule {
-	color: #a8b0f9;
+	color: #736ced;
 }
 
 .token.placeholder,
@@ -114,7 +113,7 @@ code.language-scss,
 }
 
 .token.inserted {
-	border-bottom: 1px dotted #e1e6fe;
+	border-bottom: 1px dotted #fff2c5;
 	text-decoration: none;
 }
 
@@ -128,7 +127,7 @@ code.language-scss,
 }
 
 .token.important {
-	color: #ffd246;
+	color: #e1e6fe;
 }
 
 .token.entity {
@@ -136,6 +135,6 @@ code.language-scss,
 }
 
 pre > code.highlight {
-	outline: .4em solid #fff2c5;
+	outline: .4em solid #ff9900;
 	outline-offset: .4em;
 }
