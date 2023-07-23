@@ -8,7 +8,6 @@ const siteMetadata = {
   siteUrl: 'https://serverlessbio.com',
   siteRepo: 'https://github.com/mmccarthy404/serverless-bio',
   siteLogo: '/static/images/logo.png',
-  image: '',
   socialBanner: '',
   email: 'michael.jos.mccarthy@gmail.com',
   github: 'https://github.com/mmccarthy404',
