@@ -124,16 +124,3 @@ code.language-scss,
 .token.important {
 	color: #ffbd1b;
 }
-
-.token.important,
-.token.bold {
-  font-weight: bold;
-}
-
-.token.italic {
-  font-style: italic;
-}
-
-.token.table {
-  display: inline;
-}
