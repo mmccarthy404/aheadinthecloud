@@ -1,16 +1,15 @@
 ---
-name: Tails Azimuth
-avatar: /static/images/avatar.png
-occupation: Professor of Atmospheric Science
-company: Stanford University
-email: address@yoursite.com
-twitter: https://twitter.com/Twitter
-linkedin: https://www.linkedin.com
-github: https://github.com
+name: Michael McCarthy
+avatar: /static/images/avatar.jpg
+occupation: Solutions Architect
+company: BioNTech
+email: michael.jos.mccarthy@gmail.com
+linkedin: https://www.linkedin.com/in/michael-jos-mccarthy/
+github: https://github.com/mmccarthy404
 ---
 
-Tails Azimuth is a professor of atmospheric sciences at the Stanford AI Lab. His research interests includes complexity modelling of tailwinds, headwinds and crosswinds.
+I'm a solutions architect at BioNTech building up the company's data and analytics backbone in AWS! Together with my team, I build out global pre-clinical research use cases at the intersection of data production and consumption. Together, we work closely to onboard and enable all stakeholders onto AWS and our inhouse platform technologies. 
 
-He leads the clean energy group which develops 3D air pollution-climate models, writes differential equation solvers, and manufactures titanium plated air ballons. In his free time he bakes raspberry pi.
+Outside of work I'm never far from a computer. I'm a *builder*, and I've started dozens of projects and micro-SaaS's over the years based off of the latest trends. When I'm not in front of a screen I stay busy reading (*nonfiction*), hiking (*mostly local, sometimes tropical*), and attending local trivia nights (*I can't say I ever win*).
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+I decided to build this blog to give direction to the *building* I find myself doing. I want to create content to enable people in the life science industries to use cloud technologies like AWS; scaling projects and workloads in an easy and *serverless* way. Hopefully my real-world experiences help out here, I'm excited to see where this blog goes!
