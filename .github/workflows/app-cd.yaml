@@ -3,7 +3,7 @@ name: nextjs-cd
 on:
   push:
     branches: [main]
-    paths: [blog/**]
+    paths: [app/**]
 
 permissions:
   id-token: write
@@ -16,7 +16,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./blog
+        working-directory: ./app
 
     steps:
     - name: Checkout
