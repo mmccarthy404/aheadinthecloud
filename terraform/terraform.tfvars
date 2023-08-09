@@ -1,14 +1,13 @@
 local = {
   env                        = "prod"
   region                     = "us-east-1"
-  domain                     = "serverlessbio.com"
+  domain                     = "aheadinthecloud.com"
   subdomain                  = "www"
   index_doc                  = "index.html"
   error_doc                  = "404/index.html"
-  domain_bucket_prefix       = "serverless-bio"
-  logs_bucket_prefix         = "serverless-bio-logs"
+  domain_bucket_prefix       = "aheadinthecloud"
+  logs_bucket_prefix         = "aheadinthecloud-logs"
   s3_logging_prefix          = "s3/"
   cloudfront_logging_prefix  = "cloudfront/"
   keep_log_bucket_on_destroy = false
-  cloudfront_description     = "serverlessbio.com distribution"
 }
