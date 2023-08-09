@@ -43,4 +43,4 @@ jobs:
         aws-region: us-east-1
 
     - name: Deploy
-      run: aws s3 sync ./out/ s3://serverless-bio-us-east-1-004351562122-prod --delete
+      run: aws s3 sync ./out/ s3://aheadinthecloud-us-east-1-004351562122-prod --delete

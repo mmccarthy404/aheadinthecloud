@@ -1,12 +1,12 @@
 const siteMetadata = {
-  title: 'Serverless for Life Sciences',
+  title: 'Keep Your Head in the Cloud',
   author: 'Michael McCarthy',
-  headerTitle: 'ServerlessBio',
-  description: 'A technical blog focused on serverless solutions to life science\'s challenges',
+  headerTitle: 'Ahead in the Cloud',
+  description: 'A technical blog focused on my personal journey of learning and leveraging the cloud',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://serverlessbio.com',
-  siteRepo: 'https://github.com/mmccarthy404/serverless-bio',
+  siteUrl: 'https://aheadinthecloud.com',
+  siteRepo: 'https://github.com/mmccarthy404/aheadinthecloud',
   siteLogo: '/static/images/logo.png',
   socialBanner: '',
   email: 'michael.jos.mccarthy@gmail.com',
@@ -40,7 +40,7 @@ const siteMetadata = {
     giscusConfig: {
       // Visit the link below, and follow the steps in the 'configuration' section
       // https://giscus.app/
-      repo: 'mmccarthy404/serverless-bio', //process.env.NEXT_PUBLIC_GISCUS_REPO,
+      repo: 'mmccarthy404/aheadinthecloud', //process.env.NEXT_PUBLIC_GISCUS_REPO,
       repositoryId: 'R_kgDOJ2yxxw', //process.env.NEXT_PUBLIC_GISCUS_REPOSITORY_ID,
       category: 'Announcements', //process.env.NEXT_PUBLIC_GISCUS_CATEGORY,
       categoryId: 'DIC_kwDOJ2yxx84CX-rC', //process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID,
