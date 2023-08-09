@@ -39,7 +39,7 @@ jobs:
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v2
       with:
-        role-to-assume: arn:aws:iam::004351562122:role/github-oidc-serverless-bio
+        role-to-assume: arn:aws:iam::004351562122:role/github-oidc-aheadinthecloud
         aws-region: us-east-1
 
     - name: Deploy
