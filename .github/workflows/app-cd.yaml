@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   nextjs-cd:
-    name: nextjs-ci
+    name: nextjs-cd
     runs-on: ubuntu-latest
     defaults:
       run:
