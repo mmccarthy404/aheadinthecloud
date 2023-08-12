@@ -32,7 +32,7 @@ export default function PostMinimal({ content, next, prev, children }: LayoutPro
               <Bleed>
                 <div className="aspect-[2/1] w-full relative">
                   {/* <Image src={displayImage} alt={title} fill className="object-cover" /> */}
-                  <Image src={displayImage} alt={title} className="object-cover" />
+                  <Image src={displayImage} alt={title} style={{ width: "100%", height: "100%" }} className="object-cover" />
                 </div>
               </Bleed>
             </div>
