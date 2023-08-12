@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 jobs:
-  nextjs-ci:
+  nextjs-cd:
     name: nextjs-ci
     runs-on: ubuntu-latest
     defaults:
@@ -32,9 +32,6 @@ jobs:
     
     - name: Build
       run: npm run-script build
-
-    - name: Export
-      run: npm run-script export
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v2
