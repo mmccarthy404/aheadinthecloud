@@ -16,7 +16,7 @@ const siteMetadata = {
   twitter: '',
   facebook: '',
   youtube: '',
-  linkedin: 'https://www.linkedin.com/in/michael-jos-mccarthy/',
+  linkedin: 'https://www.linkedin.com/in/michael-jos-mccarthy',
   locale: 'en-US',
   analytics: {
     // If you want to use an analytics provider you have to add it to the
