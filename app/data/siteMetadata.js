@@ -1,9 +1,9 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Keep Your Head in the Cloud',
+  title: 'Ahead in the Cloud',
   author: 'Michael McCarthy',
   headerTitle: 'Ahead in the Cloud',
-  description: 'A technical blog focused on my personal journey of learning and leveraging the cloud',
+  description: 'A technical blog focused on solving real-world, everyday use cases, in the cloud',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://aheadinthecloud.com',
@@ -16,7 +16,7 @@ const siteMetadata = {
   twitter: '',
   facebook: '',
   youtube: '',
-  linkedin: 'https://www.linkedin.com/in/michael-jos-mccarthy/',
+  linkedin: 'https://www.linkedin.com/in/michael-jos-mccarthy',
   locale: 'en-US',
   analytics: {
     // If you want to use an analytics provider you have to add it to the
