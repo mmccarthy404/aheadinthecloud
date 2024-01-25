@@ -65,3 +65,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Contentlayer
+**/.contentlayer/
+
+# search.json
+**/app/public/search.json
+
+# tag-data.json
+**/app/tag-data.json
