@@ -1,1 +1,1 @@
-{"aws":1,"iam":1,"s3":1,"aws-cli":1,"terraform":1}
+{"aws":2,"iam":2,"s3":2,"aws-cli":1,"terraform":2,"dynamodb":1}
