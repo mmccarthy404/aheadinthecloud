@@ -1,7 +1,7 @@
 ---
 title: 'Create a Simple Terraform Project in AWS'
 date: '2023-11-19'
-lastmod: '2023-11-19'
+lastmod: '2023-12-03'
 tags: ['aws', 'iam', 's3', 'aws cli', 'terraform']
 draft: false
 summary: "Create a simple Terraform project in AWS where you deploy a simple S3 bucket authenticated by AWS CLI"
@@ -361,4 +361,6 @@ And it's gone!
 
 If you've come this far congratulations on your first Terraform deployment to AWS! In this article we successfully created an *IAM User*, *IAM Group*, and *IAM Policy*. Created *IAM Access Keys* for authentication from our local development environment. Installed and configured AWS CLI with access keys. And installed Terraform. We then created a simple Terraform project with a `main.tf` declaring a single *S3 Bucket*, initialized our project with `terraform init` and deployed it with `terraform apply`. Finally we cleaned up our deployment by running `terraform destroy`.
 
-This was just a very small sample of what Terraform can do, but you can build a lot on this foundation. It wouldn't be hard for me to change the name of my existing bucket in place. Or even [deploy an *EC2*](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance). All I would have to do is add, update, or delete my resource blocks in `main.tf` and run `terraform apply` again! I'll leave future experimentation as an experiment for the reader!
+This was just a very small sample of what Terraform can do, but you can build a lot on this foundation. It wouldn't be hard for me to change the name of my existing bucket in place. Or even [deploy an *EC2*](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance). All I would have to do is add, update, or delete my resource blocks in `main.tf` and run `terraform apply` again! I'll leave future experimentation as an experiment for the reader.
+
+If you're interested in next steps, I would highly suggest you move forward into my next article, [Setup a Terraform S3 Remote State in AWS](/blog/setup-a-terraform-s3-remote-state-in-aws/)!
