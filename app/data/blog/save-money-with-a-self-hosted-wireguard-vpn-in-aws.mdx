@@ -10,9 +10,9 @@ images: ['/static/images/twitter-card.png']
 
 In my previous blog post, I walked through [how to set up a NAT instance as a cheaper alternative to a NAT gateway](https://aheadinthecloud.com/blog/how-i-learned-to-stop-worrying-and-love-the-nat-instance/). This solution enabled the instances in your private subnets to access resources on the internet, with a cost savings of over 90%! Well, I'm here today to tell you that that's only half the battle; a NAT solution will enable traffic *out* of your private subnets, but you need a VPN solution to enable traffic *in*. And I'm happy to say that I have another self-hosted solution that will save you over 97% compared to the AWS managed offerings!
 
-The AWS managed solution to connect to your AWS resources through VPN is the [AWS Client VPN](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html), which offers high availability and elasticity, multiple authentication options, and deep integrations with existing AWS service all in a fully-managed package; unfortunately, these features come with a [price tag](https://aws.amazon.com/vpn/pricing/) of $0.10 associated subnet per hour *plus* $0.05 per connection per hour, which is $0.15 per hour *minimum*.
+The AWS managed solution to connect to your AWS resources through VPN is the [AWS Client VPN](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html), which offers high availability and elasticity, multiple authentication options, and deep integrations with existing AWS service all in a fully-managed package; unfortunately, these features come with a [price tag](https://aws.amazon.com/vpn/pricing/) of \$0.10 associated subnet per hour *plus* \$0.05 per connection per hour, which is \$0.15 per hour *minimum*.
 
-Managed services like AWS Client VPN make sense when working for a larger company on production-level use cases where any downtime could lead directly to loss of revenue. However, personally, cost savings mean much more to me, which is why I decided to self-host [WireGuard](https://www.wireguard.com/), an open-source VPN, for only $0.0042 per hour, a 97% savings!
+Managed services like AWS Client VPN make sense when working for a larger company on production-level use cases where any downtime could lead directly to loss of revenue. However, personally, cost savings mean much more to me, which is why I decided to self-host [WireGuard](https://www.wireguard.com/), an open-source VPN, for only \$0.0042 per hour, a 97% savings!
 
 ## Prerequisites
 
@@ -38,7 +38,7 @@ Above you can see a summary of how I configured my instance, here's what's impor
 
 * **Amazon Machine Image (AMI)**: Selecting Amazon Linux 2023 AMI is required for later shell commands
 * **Architecture**: 64-bit (Arm) allows us to use Graviton instances, 10 - 20% cheaper vs. non-Graviton instances
-* **Instance type**: t4g.nano is currently AWS's cheapest instance type at $0.0042 per hour on demand
+* **Instance type**: t4g.nano is currently AWS's cheapest instance type at \$0.0042 per hour on demand
 * **Key pair name**: Select an existing key pair of create a new one (it's important you have your private keys)
 * **Subnet**: Select a public subnet in the VPC where you want to connect to private subnets through VPN
 * **Inbound Security Group Rules**: You'll want at least two specific rules here, one allowing TCP access on port 22 for SSH, and another allowing UDP access on port 51820 for WireGuard (you'll see where this port is configured later). I specify access only from my IP, but feel free to customize the source as needed
