@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   terraform-ci:
-    uses: mmccarthy404/reusable-workflows/.github/workflows/terraform-ci.yaml@v1.0.0
+    uses: michaelmccarthydev/reusable-workflows/.github/workflows/terraform-ci.yaml@v1.0.0
     with:
       terraform-version: 1.5.0
       terraform-directory: ./terraform
