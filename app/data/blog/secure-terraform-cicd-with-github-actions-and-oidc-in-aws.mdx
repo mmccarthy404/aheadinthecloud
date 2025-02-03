@@ -65,7 +65,7 @@ Creating an OIDC federated role is no different than creating a normal role, the
       "Condition": {
         "StringLike": {
           "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
-          "token.actions.githubusercontent.com:sub": "repo:mmccarthy404/terraform-use-case:*"
+          "token.actions.githubusercontent.com:sub": "repo:michaelmccarthydev/terraform-use-case:*"
         }
       }
     }
@@ -80,16 +80,16 @@ Now there's a few things you may or may want to change in your own policy here, 
 * `Action` - the API actions this statement effects; `sts:AssumeRoleWithWebIdentity` returns a set of temporary security credentials to users authenticated with GitHub OIDC
 * `Conditions` - specified conditions on when a policy is in effect, and when it's not; here I assert that two values of GitHub's OIDC claim are true using `StringEquals` to test for string equality:
   * `token.actions.githubusercontent.com:aud` -  the audience claim, what GitHub expects to be issuing tokens to, here I only allow access to *'sts.amazonaws.com'*
-  * `token.actions.githubusercontent.com:sub` - the subject claim, identifying the user at the issuer (GitHub), here I only allow access when the user is a repo from the account or organization *'mmccarthy404'* and the repo is named *'terraform-use-case'*; <u>you need to customize this value for your own use cases</u>
+  * `token.actions.githubusercontent.com:sub` - the subject claim, identifying the user at the issuer (GitHub), here I only allow access when the user is a repo from the account or organization *'michaelmccarthydev'* and the repo is named *'terraform-use-case'*; <u>you need to customize this value for your own use cases</u>
 
-This is also a good time to say that you have some flexibility on how permissive or restrictive you want to be with this role. For example, if I didn't care about what repo in my account or organization to restrict access to here, I can be much more permissive by moving up the wildcard in my subscription assertion to let any repo in *'mmccarthy404'* assume this role:
+This is also a good time to say that you have some flexibility on how permissive or restrictive you want to be with this role. For example, if I didn't care about what repo in my account or organization to restrict access to here, I can be much more permissive by moving up the wildcard in my subscription assertion to let any repo in *'michaelmccarthydev'* assume this role:
 
 ```json
 ...
 "Condition": {
   "StringLike": {
     "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
-    "token.actions.githubusercontent.com:sub": "repo:mmccarthy404/*"
+    "token.actions.githubusercontent.com:sub": "repo:michaelmccarthydev/*"
   }
 }
 ...
@@ -162,7 +162,7 @@ On the final page, give some meaningful value for **Role name**, I'll use *'gith
 
 The final piece of the puzzle here is to create the repo. [Git](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F) is a version control system ubiquitous in the industry and used by developers globally to version their code. [GitHub](https://github.com/about) is just a web-based Git repository, which makes it simple to collaborate and share code both publicly and privately. So while the two are often referred to synonymously, they aren't the same, and you can have Git without GitHub, but you can't have GitHub without Git! Going into the intricates of Git and GitHub is out of scope for this blog, but look into GitHub's [Git tutorial](https://docs.github.com/en/get-started/using-git/about-git) and [GitHub tutorial](https://docs.github.com/en/get-started/using-github/github-flow) for a more technical deep-dive on each. For this article I'll walk though setup from within GitHub's UI.
 
-To start, I'll navigate GitHub's [Create a new repository](https://github.com/new) form and specify both a **Owner** and **Repository name** for my new repository, I'll use *'mmccarthy404'* and *'terraform-use-case'* respectfully. <u>The values here need to match the values specified in the previously created role's trust policy `token.actions.githubusercontent.com:sub` assertion exactly.</u>
+To start, I'll navigate GitHub's [Create a new repository](https://github.com/new) form and specify both a **Owner** and **Repository name** for my new repository, I'll use *'michaelmccarthydev'* and *'terraform-use-case'* respectfully. <u>The values here need to match the values specified in the previously created role's trust policy `token.actions.githubusercontent.com:sub` assertion exactly.</u>
 
 You can give an optional description and select **Private** for visibility. <u>This solution will work exactly the same for both [public and private repos](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility), but because public repos run the risk of having secrets accidentally committed and leaked, it's safer to remove that risk.</u>
 
@@ -182,7 +182,7 @@ Feel free to create these files locally with Git or [GitHub Desktop](https://des
 
 ```bash
 git init
-git remote add origin https://github.com/mmccarthy404/terraform-use-case.git
+git remote add origin https://github.com/michaelmccarthydev/terraform-use-case.git
 git checkout -b main
 git pull origin main
 git add .
@@ -404,4 +404,4 @@ That's all it takes to setup a successful Terraform CICD with GitHub Actions and
 
 Also, using GitHub OIDC to federate access to IAM roles is a powerful tool that extends to far greater use cases than just Terraform CICD. You can use this same solution to federate actions to any AWS services, including Lambda, DynamoDB, or S3; there's really no limit to what you can do here, and you should experiment!
 
-Lastly, here I demoed the setup directly through the AWS console, but in practice, it's best practice to do everything through IaC. I personally have a [single Terraform repo](https://github.com/mmccarthy404/terraform-remote-state) responsible for both the Terraform S3 backend and GitHub OIDC federated roles across all of my projects. Whenever I start a new project, I create a new GitHub repo and add the repo to a [`repos` variable](https://github.com/mmccarthy404/terraform-remote-state/blob/main/terraform.tfvars) to fully automate everything!
+Lastly, here I demoed the setup directly through the AWS console, but in practice, it's best practice to do everything through IaC. I personally have a [single Terraform repo](https://github.com/michaelmccarthydev/terraform-remote-state) responsible for both the Terraform S3 backend and GitHub OIDC federated roles across all of my projects. Whenever I start a new project, I create a new GitHub repo and add the repo to a [`repos` variable](https://github.com/michaelmccarthydev/terraform-remote-state/blob/main/terraform.tfvars) to fully automate everything!
