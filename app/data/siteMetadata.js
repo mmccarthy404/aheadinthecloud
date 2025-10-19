@@ -7,12 +7,12 @@ const siteMetadata = {
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://aheadinthecloud.com',
-  siteRepo: 'https://github.com/michaelmccarthydev/aheadinthecloud',
+  siteRepo: 'https://github.com/mmccarthy404/aheadinthecloud',
   siteLogo: '/static/images/logo.png',
   socialBanner: '/static/images/twitter-card.png',
   mastodon: '',
   email: 'michael.jos.mccarthy@gmail.com',
-  github: 'https://github.com/michaelmccarthydev',
+  github: 'https://github.com/mmccarthy404',
   twitter: '',
   facebook: '',
   youtube: '',
@@ -51,7 +51,7 @@ const siteMetadata = {
     giscusConfig: {
       // Visit the link below, and follow the steps in the 'configuration' section
       // https://giscus.app/
-      repo: 'michaelmccarthydev/aheadinthecloud', // process.env.NEXT_PUBLIC_GISCUS_REPO,
+      repo: 'mmccarthy404/aheadinthecloud', // process.env.NEXT_PUBLIC_GISCUS_REPO,
       repositoryId: 'R_kgDOJ2yxxw', // process.env.NEXT_PUBLIC_GISCUS_REPOSITORY_ID,
       category: 'Announcements', // process.env.NEXT_PUBLIC_GISCUS_CATEGORY,
       categoryId: 'DIC_kwDOJ2yxx84CX-rC', // process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID,
